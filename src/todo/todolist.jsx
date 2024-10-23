@@ -9,7 +9,7 @@ function TodoList() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (editIndex !== null) {
-      // Edit existing todo
+      
       const updatedTodos = todos.map((todo, index) => 
         index === editIndex ? newTodo : todo
       );
