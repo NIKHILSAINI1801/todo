@@ -1,4 +1,8 @@
+/* commited by nikhil saini */
+/* Todo List Styles */
+
 .todo-list {
+  /* Container Styles */
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
@@ -8,6 +12,7 @@
 }
 
 .todo-list header {
+  /* Header Styles */
   background-image: url(../assets/cuet1.jpeg);
   background-size: cover;
   background-position: center;
@@ -19,6 +24,7 @@
 }
 
 .todo-list header h1 {
+  /* Header Title Styles */
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -26,6 +32,7 @@
 }
 
 .todo-list form {
+  /* Form Styles */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,6 +40,7 @@
 }
 
 .todo-list input[type="text"] {
+  /* Input Field Styles */
   width: 70%;
   padding: 10px;
   font-size: 16px;
@@ -40,6 +48,7 @@
 }
 
 .todo-list button[type="submit"] {
+  /* Submit Button Styles */
   width: 30%;
   padding: 10px;
   font-size: 16px;
@@ -50,26 +59,31 @@
 }
 
 .todo-list button[type="submit"]:hover {
+  /* Submit Button Hover Styles */
   background-color: #3e8e41;
 }
 
 .todo-list ul {
+  /* List Styles */
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .todo-list li {
+  /* List Item Styles */
   padding: 20px;
   border-bottom: 1px solid #d93535;
   transition: all 0.3s ease;
 }
 
 .todo-list li:last-child {
+  /* Last List Item Styles */
   border-bottom: none;
 }
 
 .todo-list button {
+  /* Delete Button Styles */
   background-color: #e74c3c;
   color: #fff;
   border: none;
@@ -79,9 +93,11 @@
 }
 
 .todo-list button:hover {
+  /* Delete Button Hover Styles */
   background-color: #c0392b;
 }
 
 .todo-list li:hover {
+  /* List Item Hover Styles */
   background-color: #20e247;
 }

@@ -50,6 +50,7 @@ function TodoList() {
           <li key={index}>
             {todo}
             <button onClick={() => handleEdit(index)}>Edit</button>
+          
             <button onClick={() => handleDelete(index)}>Delete</button>
           </li>
         ))}
