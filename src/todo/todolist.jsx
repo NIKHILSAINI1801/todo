@@ -1,20 +1,36 @@
 import React, { useState } from 'react';
-import './todolist.css'
+import './todolist.css';
+
 function TodoList() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
+  const [editIndex, setEditIndex] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodos([...todos, newTodo]);
+    if (editIndex !== null) {
+      // Edit existing todo
+      const updatedTodos = todos.map((todo, index) => 
+        index === editIndex ? newTodo : todo
+      );
+      setTodos(updatedTodos);
+      setEditIndex(null);
+    } else {
+      // Add new todo
+      setTodos([...todos, newTodo]);
+    }
     setNewTodo('');
   };
 
   const handleDelete = (index) => {
-    setTodos(todos.filter((todo, i) => i !== index));
+    setTodos(todos.filter((_, i) => i !== index));
   };
 
-  
+  const handleEdit = (index) => {
+    setNewTodo(todos[index]);
+    setEditIndex(index);
+  };
+
   return (
     <div className="todo-list">
       <h1>To Do List</h1>
@@ -27,16 +43,17 @@ function TodoList() {
         />
         <br />
         <br />
-        <button type="submit">Add</button>
+        <button type="submit">{editIndex !== null ? 'Update' : 'Add'}</button>
       </form>
-      <li>
+      <ul>
         {todos.map((todo, index) => (
           <li key={index}>
             {todo}
+            <button onClick={() => handleEdit(index)}>Edit</button>
             <button onClick={() => handleDelete(index)}>Delete</button>
           </li>
         ))}
-      </li>
+      </ul>
     </div>
   );
 }
